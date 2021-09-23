@@ -1,0 +1,207 @@
+body {
+  /* background-image: radial-gradient(
+      circle,
+      rgba(215, 208, 223, 1) 0%,
+      rgba(185, 185, 235, 0.2750233882615546) 48%,
+      rgba(194, 234, 241, 0.6867880941439075) 100%
+    ),
+    url("images/sky1.jpg"); */
+  background-image: url("images/sky5.jpg");
+  height: 100%;
+  background-size: cover;
+}
+/* .spotify{
+  width: 25%;
+  float:left;
+  padding:0;
+  margin-top: 90px;
+}
+.qotd{
+  width: 25%;
+  float:right;
+  padding:0;
+  margin-top: 90px;
+}
+.shape-a{
+  height:350px;
+  width: 350px;
+  background-color: plum;
+  border-radius: 50%;
+  margin: 0 30px 0 25px;
+}
+.shape-b{
+  height:350px;
+  width: 350px;
+  background-color: plum;
+  border-radius: 50%;
+} */
+.main {
+  max-width: 700px;
+  margin-top: 80px;
+  padding: 0;
+}
+.search {
+  margin-bottom: 8px;
+}
+input {
+  width: 70%;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  border: 5px solid rgba(233, 226, 125, 0.6);
+  /* border: 5px solid rgba(140, 13, 145, 0.6); */
+  border-radius: 30px;
+}
+.location {
+  border: transparent;
+  border-radius: 30px;
+  background-color: rgba(115, 179, 115, 0.7);
+  width: 18%;
+  padding: 5px 2px;
+  color: white;
+}
+.submit-city {
+  border: transparent;
+  border-radius: 30px;
+  background-color: #4dd2ff;
+  width: 10%;
+  padding: 5px 2px;
+  color: white;
+  font-weight: bold;
+}
+.today {
+  /* border: 8px solid white;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.4); */
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(116, 117, 134, 0.37);
+  backdrop-filter: blur(4px);
+  border-radius: 30px;
+}
+.city-name {
+  text-align: center;
+  font-size: 65px;
+  text-transform: capitalize;
+  /* font-family: "Lexend Deca", sans-serif;
+font-weight: 400; */
+  /* font-family: "Saira Semi Condensed", sans-serif; */
+  font-family: "Capriola", sans-serif;
+  color: rgb(230, 99, 121);
+}
+.temperature {
+  position: relative;
+  font-size: 50px;
+  text-align: center;
+  left: -40px;
+}
+img {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+}
+.celsius {
+  border-radius: 8px 0 0 8px;
+}
+.fahrenheit {
+  border-radius: 0 8px 8px 0;
+}
+.active {
+  background: pink !important;
+  font-weight: bold;
+}
+.celsius,
+.fahrenheit {
+  background: white;
+  color: #1d1d1d;
+  display: inline-block;
+  font-size: 16px;
+  padding: 2px 8px;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+  position: relative;
+  top: -6px;
+  border: 0;
+}
+.celsius:hover,
+.fahrenheit:hover {
+  background: pink;
+}
+.celsius:focus,
+.fahrenheit:focus {
+  background-color: pink;
+}
+.celsius:visited,
+.fahrenheit:visited {
+  background-color: pink;
+}
+
+.minmax {
+  font-size: 20px;
+  padding-top: 5px;
+  margin-bottom: 10px;
+}
+.max {
+  font-weight: 700;
+}
+.info {
+  position: relative;
+  font-size: 22px;
+  padding-left: 130px;
+  margin-top: 20px;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+}
+h1 {
+  color: rgb(255, 255, 0);
+  text-shadow: 3px 1px 2px gray;
+}
+.date,
+.time {
+  color: rgb(127, 81, 211);
+}
+.feels {
+  /* color:rgb(76, 76, 216); */
+  color: rgb(247, 139, 52);
+  font-size: 20px;
+}
+.humidity {
+  color: rgb(75, 149, 192);
+  font-size: 26px;
+}
+.wind {
+  color: rgb(76, 76, 216);
+  font-size: 26px;
+}
+.sunrise {
+  color: rgb(245, 75, 75);
+  font-size: 20px;
+}
+.sunset {
+  color: rgb(35, 109, 109);
+  font-size: 20px;
+}
+.weekdays {
+  margin: 20px 0;
+  padding: 10px 20px;
+  border: 5px solid rgba(220, 156, 250, 0.6);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(116, 117, 134, 0.37);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+}
+.day {
+  font-size: 25px;
+  padding-top: 10px;
+}
+.emoji {
+  font-size: 40px;
+  text-align: right;
+}
+.weekday-temp {
+  font-size: 24px;
+  text-align: right;
+  padding-top: 10px;
+}
+footer {
+  text-align: center;
+  color: white;
+}

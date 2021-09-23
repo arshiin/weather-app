@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Capriola&family=Lexend+Deca:wght@200;400;500&family=Saira+Semi+Condensed:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="sources-media/weatherapp.css" />
+  </head>
+  <body>
+    <!-- <div class="spotify"> <div class="shape-a"></div> </div>
+    <div class="qotd"><div class="shape-b"></div></div> -->
+    <div class="container main">
+      <form class="search" id="search-form">
+        <input
+          id="city-input"
+          type="search"
+          placeholder="Enter city name..."
+          autocomplete="off"
+        />
+        <button class="location" id="location">Location 📍</button>
+        <input
+          id="submit-city"
+          type="submit"
+          class="submit-city"
+          value="Submit"
+        />
+      </form>
+      <div class="card today">
+        <div class="card-body">
+          <div class="city-name">Tehran</div>
+          <div class="row">
+            <div class="col-6 temperature">
+              <img src="sources-media/images/sungif.gif" alt="sunny" />
+              <span class="current-temp">25</span><span>°</span>
+              <button class="celsius active" disabled>C</button
+              ><button class="fahrenheit">F</button>
+              <div class="minmax">
+                <span class="max">32</span><span>° / </span>
+                <span class="min">22</span><span>°</span>
+              </div>
+            </div>
+            <div class="col-6 info">
+              <h1>Sunny</h1>
+              <div class="date">Sunday, August 15</div>
+              <div class="time">11:23 AM</div>
+              <div class="feels">
+                Feels like <span class="feels-degree">27</span><span>°</span>
+              </div>
+              <div class="humidity">20% Humidity</div>
+              <div class="wind">14 km/h Wind</div>
+              <div class="sunrise">Sunrise: 6:23 AM</div>
+              <div class="sunset">Sunset: 7:52 PM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card weekdays">
+        <div class="row">
+          <div class="col-4 day">Monday</div>
+          <div class="col-4 emoji">☁</div>
+          <div class="col-4 weekday-temp">28° / 19°</div>
+        </div>
+      </div>
+      <div class="card weekdays">
+        <div class="row">
+          <div class="col-4 day">Tuesday</div>
+          <div class="col-4 emoji">⛅</div>
+          <div class="col-4 weekday-temp">30° / 22°</div>
+        </div>
+      </div>
+      <div class="card weekdays">
+        <div class="row">
+          <div class="col-4 day">Wednesday</div>
+          <div class="col-4 emoji">🌧</div>
+          <div class="col-4 weekday-temp">23° / 15°</div>
+        </div>
+      </div>
+      <div class="card weekdays">
+        <div class="row">
+          <div class="col-4 day">Thursday</div>
+          <div class="col-4 emoji">☁</div>
+          <div class="col-4 weekday-temp">25° / 18°</div>
+        </div>
+      </div>
+      <div class="card weekdays">
+        <div class="row">
+          <div class="col-4 day">Friday</div>
+          <div class="col-4 emoji">☀</div>
+          <div class="col-4 weekday-temp">30° / 23°</div>
+        </div>
+      </div>
+      <footer>Coded by Arshin Soltan</footer>
+    </div>
+
+    <script src="sources-media/weatherapp.js"></script>
+  </body>
+</html>
