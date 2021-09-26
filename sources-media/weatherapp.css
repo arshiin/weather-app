@@ -54,7 +54,7 @@ input {
 .location {
   border: transparent;
   border-radius: 30px;
-  background-color: rgba(115, 179, 115, 0.7);
+  background-color: rgba(94, 150, 94, 0.7);
   width: 18%;
   padding: 5px 2px;
   color: white;
@@ -62,7 +62,7 @@ input {
 .submit-city {
   border: transparent;
   border-radius: 30px;
-  background-color: #4dd2ff;
+  background-color: #7cb7d4;
   width: 10%;
   padding: 5px 2px;
   color: white;
@@ -84,8 +84,8 @@ input {
   /* font-family: "Lexend Deca", sans-serif;
 font-weight: 400; */
   /* font-family: "Saira Semi Condensed", sans-serif; */
-  font-family: "Capriola", sans-serif;
-  color: rgb(230, 99, 121);
+  font-family: "Alata",sans-serif;
+  color: rgb(206, 104, 180);
 }
 .temperature {
   position: relative;
@@ -151,32 +151,29 @@ img {
   font-weight: 400;
 }
 h1 {
-  color: rgb(255, 255, 0);
-  text-shadow: 3px 1px 2px gray;
+  /* text-shadow: 3px 1px 2px gray; */
 }
 .date,
 .time {
-  color: rgb(127, 81, 211);
+  color: rgb(165, 133, 226);
+  font-size: 24px;
 }
 .feels {
   /* color:rgb(76, 76, 216); */
-  color: rgb(247, 139, 52);
+  color: #4e967c;
+  font-size: 24px;
+}
+.humidity,.wind {
+  color: rgb(75, 149, 192);
   font-size: 20px;
 }
-.humidity {
-  color: rgb(75, 149, 192);
-  font-size: 26px;
-}
-.wind {
-  color: rgb(76, 76, 216);
-  font-size: 26px;
-}
 .sunrise {
-  color: rgb(245, 75, 75);
+  /* color: rgb(245, 75, 75); */
+  color:#FF8133;
   font-size: 20px;
 }
 .sunset {
-  color: rgb(35, 109, 109);
+  color: #4b4570;
   font-size: 20px;
 }
 .weekdays {
