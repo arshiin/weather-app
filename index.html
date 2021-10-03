@@ -21,8 +21,6 @@
     <link rel="stylesheet" href="sources-media/weatherapp.css" />
   </head>
   <body>
-    <!-- <div class="spotify"> <div class="shape-a"></div> </div>
-    <div class="qotd"><div class="shape-b"></div></div> -->
     <div class="container main">
       <form class="search" id="search-form">
         <input
@@ -31,39 +29,45 @@
           placeholder="Enter city name..."
           autocomplete="off"
         />
-        <button class="location" id="location">Location 📍</button>
-        <input
-          id="submit-city"
-          type="submit"
-          class="submit-city"
-          value="Submit"
-        />
+        <button id="location">Location 📍</button>
+        <input id="submit-city" type="submit" value="Submit" />
       </form>
       <div class="card today">
         <div class="card-body">
-          <div class="city-name">Tehran</div>
-          <div class="row">
-            <div class="col-6 temperature">
-              <img src="sources-media/images/sungif.gif" alt="sunny" />
-              <span class="current-temp">25</span><span>°</span>
-              <button class="celsius active" disabled>C</button
-              ><button class="fahrenheit">F</button>
-              <div class="minmax">
-                <span class="max">32</span><span>° / </span>
-                <span class="min">22</span><span>°</span>
+          <div class="clearfix">
+            <div class="city-name">Tehran</div>
+            <div class="row">
+              <div class="col-6 temperature">
+                <img
+                  class="condition"
+                  src="sources-media/images/sunny.gif"
+                  alt="sunny"
+                />
+                <div class="temp-degrees">
+                  <span class="current-temp">25</span><span>°</span>
+                  <button class="celsius active" disabled>C</button
+                  ><button class="fahrenheit">F</button>
+                  <div class="minmax">
+                    <span class="max">32</span><span>° / </span>
+                    <span class="min">22</span><span>°</span>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="col-6 info">
-              <h1>Sunny</h1>
-              <div class="date">Sunday, August 15</div>
-              <div class="time">11:23 AM</div>
-              <div class="feels">
-                Feels like <span class="feels-degree">27</span><span>°</span>
+              <div class="col-6 info">
+                <h1 id="condition">Sunny</h1>
+                <ul>
+                  <li class="date">Sunday, August 15</li>
+                  <li class="time">11:23 AM</li>
+                  <li class="feels">
+                    Feels like <span class="feels-degree">27</span
+                    ><span>°</span>
+                  </li>
+                  <li class="humidity">20% Humidity</li>
+                  <li class="wind">14 km/h Wind</li>
+                  <li class="sunrise">Sunrise: 6:23 AM</li>
+                  <li class="sunset">Sunset: 7:52 PM</li>
+                </ul>
               </div>
-              <div class="humidity">20% Humidity</div>
-              <div class="wind">14 km/h Wind</div>
-              <div class="sunrise">Sunrise: 6:23 AM</div>
-              <div class="sunset">Sunset: 7:52 PM</div>
             </div>
           </div>
         </div>
@@ -104,8 +108,10 @@
         </div>
       </div>
       <footer>
-        <a href="https://github.com/arshiin/weather-app" target="_blank">Open-source code</a> by
-        Arshin Soltan
+        <a href="https://github.com/arshiin/weather-app" target="_blank"
+          >Open-source code</a
+        >
+        by Arshin Soltan
       </footer>
     </div>
 
