@@ -8,18 +8,17 @@ body {
   margin-top: 80px;
   padding: 0;
 }
-.search {
+.main .search {
   margin-bottom: 8px;
 }
-#city-input {
+.search #city-input {
   width: 70%;
   padding-left: 20px;
   margin-bottom: 10px;
   border: 5px solid rgba(233, 226, 125, 0.6);
-  /* border: 5px solid rgba(140, 13, 145, 0.6); */
   border-radius: 30px;
 }
-#location {
+.search #location {
   border: transparent;
   border-radius: 30px;
   background-color: rgba(94, 150, 94, 0.7);
@@ -27,7 +26,7 @@ body {
   padding: 5px 2px;
   color: white;
 }
-#submit-city {
+.search #submit-city {
   border: transparent;
   border-radius: 30px;
   background-color: #7cb7d4;
@@ -117,7 +116,6 @@ body {
   font-size: 24px;
 }
 .info .feels {
-  /* color:rgb(76, 76, 216); */
   color: #4e967c;
   font-size: 24px;
   margin-bottom: 15px;
@@ -128,7 +126,6 @@ body {
   font-size: 20px;
 }
 .info .sunrise {
-  /* color: rgb(245, 75, 75); */
   color: #ff8133;
   font-size: 20px;
   margin-top: 15px;
@@ -161,5 +158,5 @@ body {
 }
 footer {
   text-align: center;
-  color: white;
+  color: rgb(255, 255, 255);
 }
