@@ -1,5 +1,5 @@
-let currentTime = new Date();
 function showDate() {
+  let currentTime = new Date();
   let days = [
     "Sunday",
     "Monday",
@@ -50,12 +50,6 @@ function showWeather(response) {
   document.querySelector(".current-temp").innerHTML = Math.round(
     response.data.main.temp
   ); // city temperature
-  celsiusButton.classList.add("active");
-  celsiusButton.setAttribute("disabled", true);
-  fahrenheitButton.classList.remove("active");
-  fahrenheitButton.removeAttribute("disabled");
-  // to go back to default unit (celsius) when a new city is searched
-
   document.querySelector(".max").innerHTML = Math.round(
     response.data.main.temp_max
   ); // max temp
@@ -71,59 +65,6 @@ function showWeather(response) {
   document.querySelector(".wind").innerHTML = `${Math.round(
     response.data.wind.speed * 3.6
   )} km/h Wind`; // wind
-  let sunriseTime = new Date(response.data.sys.sunrise * 1000);
-  let sunriseHours = sunriseTime.getHours();
-  let sunriseMinutes = sunriseTime.getMinutes();
-  if (sunriseHours < 10) {
-    sunriseHours = `0${sunriseHours}`;
-  }
-  if (sunriseMinutes < 10) {
-    sunriseMinutes = `0${sunriseMinutes}`;
-  }
-  document.querySelector(
-    ".sunrise"
-  ).innerHTML = `Sunrise: ${sunriseHours}:${sunriseMinutes} AM`;
-  let sunsetTime = new Date(response.data.sys.sunset * 1000);
-  let sunsetHours = sunsetTime.getHours();
-  let sunsetMinutes = sunsetTime.getMinutes();
-  if (sunsetHours > 12) {
-    sunsetHours = sunsetHours - 12;
-  }
-  if (sunsetHours < 10) {
-    sunsetHours = `0${sunsetHours}`;
-  }
-  if (sunsetMinutes < 10) {
-    sunsetMinutes = `0${sunsetMinutes}`;
-  }
-  document.querySelector(
-    ".sunset"
-  ).innerHTML = `Sunset: ${sunsetHours}:${sunsetMinutes} PM`;
-  let condition = document.querySelector("#condition");
-  let conditionImage = document.querySelector(".condition");
-  let description = response.data.weather[0].main;
-  condition.innerHTML = description;
-  conditionImage.alt = description;
-  if (
-    description == "Clear" &&
-    currentTime.getHours() < sunsetTime.getHours()
-  ) {
-    conditionImage.src = "sources-media/images/sunny.gif";
-  } else if (
-    description == "Clear" &&
-    currentTime.getHours() > sunsetTime.getHours()
-  ) {
-    conditionImage.src = "sources-media/images/clearnight.gif";
-  } else if (description == "Clouds") {
-    conditionImage.src = "sources-media/images/cloudy.gif";
-  } else if (description == "Rain" || description == "Drizzle") {
-    conditionImage.src = "sources-media/images/rainy.gif";
-  } else if (description == "Snow") {
-    conditionImage.src = "sources-media/images/snowy.gif";
-  } else if (description == "Thunderstorm") {
-    conditionImage.src = "sources-media/images/stormy.gif";
-  } else {
-    conditionImage.src = "sources-media/images/foggy.gif";
-  }
 }
 
 function showCity(event) {
@@ -133,6 +74,8 @@ function showCity(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
+let submitCity = document.querySelector("#search-form");
+submitCity.addEventListener("submit", showCity);
 
 function getCelsius(event) {
   event.preventDefault();
@@ -169,6 +112,11 @@ function getFahrenheit(event) {
   feelsDegree.innerHTML = Math.round(feelsDegree.innerHTML * 1.8 + 32);
 }
 
+let fahrenheitButton = document.querySelector(".fahrenheit");
+fahrenheitButton.addEventListener("click", getFahrenheit);
+let celsiusButton = document.querySelector(".celsius");
+celsiusButton.addEventListener("click", getCelsius);
+
 function getCoords(position) {
   lat = position.coords.latitude;
   lon = position.coords.longitude;
@@ -180,11 +128,5 @@ function detectCity(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(getCoords);
 }
-let submitCity = document.querySelector("#search-form");
-submitCity.addEventListener("submit", showCity);
-let locationButton = document.querySelector("#location");
+let locationButton = document.querySelector(".location");
 locationButton.addEventListener("click", detectCity);
-let fahrenheitButton = document.querySelector(".fahrenheit");
-fahrenheitButton.addEventListener("click", getFahrenheit);
-let celsiusButton = document.querySelector(".celsius");
-celsiusButton.addEventListener("click", getCelsius);
