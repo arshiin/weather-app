@@ -1,5 +1,5 @@
 body {
-  background-image: url("images/sky5.jpg");
+  background-image: url("images/clear-bg.jpg");
   height: 100%;
   background-size: cover;
 }
@@ -8,8 +8,8 @@ body {
   margin-top: 80px;
   padding: 0;
 }
-.main .search {
-  margin-bottom: 8px;
+.main #search-form {
+  margin-bottom: 4px;
 }
 .search #city-input {
   width: 70%;
@@ -24,15 +24,15 @@ body {
   background-color: rgba(94, 150, 94, 0.7);
   width: 18%;
   padding: 5px 2px;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .search #submit-city {
   border: transparent;
   border-radius: 30px;
-  background-color: #7cb7d4;
+  background-color: rgb(124, 183, 212);
   width: 10%;
   padding: 5px 2px;
-  color: white;
+  color: rgb(255, 255, 255);
   font-weight: bold;
 }
 .today {
@@ -44,21 +44,30 @@ body {
 }
 .city-name {
   text-align: center;
-  font-size: 65px;
+  font-size: 70px;
+  letter-spacing: -2px;
   text-transform: capitalize;
   font-family: "Alata", sans-serif;
   color: rgb(206, 104, 180);
 }
 .temperature {
   position: relative;
-  font-size: 50px;
+  font-size: 60px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  color: rgb(51, 34, 90);
   text-align: center;
   left: -40px;
+  padding: 0;
+  padding-left: 80px;
 }
 .temperature img {
   display: block;
   margin: 0 auto;
   width: 200px;
+}
+.temp-degrees {
+  margin-top: 10px;
 }
 .celsius {
   border-radius: 8px 0 0 8px;
@@ -89,8 +98,7 @@ body {
 }
 .minmax {
   font-size: 20px;
-  padding-top: 5px;
-  margin-bottom: 10px;
+  margin-top: 5px;
 }
 .minmax .max {
   font-weight: 700;
@@ -98,7 +106,7 @@ body {
 .info {
   position: relative;
   font-size: 22px;
-  padding-left: 110px;
+  padding-left: 90px;
   margin-top: 20px;
   font-family: "Lexend Deca", sans-serif;
   font-weight: 400;
@@ -109,14 +117,19 @@ body {
 }
 .info h1 {
   color: rgb(255, 255, 255);
+  letter-spacing: -1px;
+  font-size: 48px;
 }
-.info .date,
-.time {
+.info .date {
   color: rgb(165, 133, 226);
   font-size: 24px;
 }
+.info .time {
+  font-size: 26px;
+  color: rgb(165, 80, 132);
+}
 .info .feels {
-  color: #4e967c;
+  color: rgb(78, 150, 124);
   font-size: 24px;
   margin-bottom: 15px;
 }
@@ -126,17 +139,67 @@ body {
   font-size: 20px;
 }
 .info .sunrise {
-  color: #ff8133;
+  color: rgb(255, 136, 61);
   font-size: 20px;
   margin-top: 15px;
 }
 .info .sunset {
-  color: #4b4570;
+  color: rgb(75, 69, 112);
   font-size: 20px;
 }
+.change-bg {
+  margin: 15px 0;
+  padding: 5px 20px;
+  border: 5px solid rgba(125, 65, 153, 0.6);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(116, 117, 134, 0.37);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+}
+.change-bg .title {
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 500;
+  text-align: center;
+  padding: 0;
+  margin: auto;
+}
+.change-bg .buttons {
+  margin: 0 -8px 0 5px;
+  padding: 3px 0 3px 0;
+}
+.change-bg .buttons .btn-secondary {
+  font-size: 11px;
+  border: none;
+  font-family: "Capriola", sans-serif;
+}
+.change-bg .buttons #clear-day {
+  background-color: rgb(86, 166, 202);
+  border-radius: 20px 0 0 20px;
+}
+.change-bg .buttons #clear-night {
+  background-color: rgb(9, 55, 77);
+}
+.change-bg .buttons #clouds {
+  background-color: rgb(152, 119, 212);
+}
+.change-bg .buttons #rain {
+  background-color: rgb(79, 96, 248);
+}
+.change-bg .buttons #thunder {
+  background-color: rgb(197, 103, 66);
+}
+.change-bg .buttons #snow {
+  background-color: rgb(128, 150, 158);
+}
+.change-bg .buttons #mist {
+  background-color: rgb(218, 122, 170);
+  border-radius: 0 20px 20px 0;
+}
 .weekdays {
-  margin: 20px 0;
-  padding: 10px 20px;
+  margin: 15px 0;
+  padding: 5px 20px;
   border: 5px solid rgba(220, 156, 250, 0.6);
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(116, 117, 134, 0.37);
@@ -159,4 +222,18 @@ body {
 footer {
   text-align: center;
   color: rgb(255, 255, 255);
+  background-color: rgba(201, 201, 238, 0.6);
+  border-radius: 15px 15px 0 0;
+}
+.github:link,
+.github:active,
+.github:visited,
+.linkedin:link,
+.linkedin:active,
+.linkedin:visited {
+  color: rgb(26, 78, 94);
+}
+.github:hover,
+.linkedin:hover {
+  color: rgb(233, 52, 142);
 }

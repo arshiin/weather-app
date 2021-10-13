@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Capriola&family=Lexend+Deca:wght@200;400;500&family=Saira+Semi+Condensed:wght@600&family=Alata&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Capriola&family=Raleway:wght@400;600&family=Lexend+Deca:wght@200;300;400;500&family=Saira+Semi+Condensed:wght@600&family=Alata&display=swap"
       rel="stylesheet"
     />
     <link
@@ -34,44 +34,42 @@
       </form>
       <div class="card today">
         <div class="card-body">
-          <div class="clearfix">
-            <div class="city-name">Tehran</div>
-            <div class="row">
-              <div class="col-6 temperature">
-                <img
-                  class="condition"
-                  src="sources-media/images/sunny.gif"
-                  alt="sunny"
-                />
-                <div class="temp-degrees">
-                  <span class="current-temp">25</span><span>°</span>
-                  <button class="celsius active" disabled>C</button
-                  ><button class="fahrenheit">F</button>
-                  <div class="minmax">
-                    <span class="max">32</span><span>° / </span>
-                    <span class="min">22</span><span>°</span>
-                  </div>
+          <div class="city-name">Tehran</div>
+          <div class="row">
+            <div class="col-6 temperature">
+              <img
+                class="condition"
+                src="sources-media/images/sunny.gif"
+                alt="sunny"
+              />
+              <div class="temp-degrees">
+                <span class="current-temp">25</span><span>°</span>
+                <button class="celsius active" disabled>C</button
+                ><button class="fahrenheit">F</button>
+                <div class="minmax">
+                  <span class="max">32</span><span>° / </span>
+                  <span class="min">22</span><span>°</span>
                 </div>
               </div>
-              <div class="col-6 info">
-                <h1 id="condition">Sunny</h1>
-                <ul>
-                  <li class="date">Sunday, August 15</li>
-                  <li class="time">11:23 AM</li>
-                  <li class="feels">
-                    Feels like <span class="feels-degree">27</span
-                    ><span>°</span>
-                  </li>
-                  <li class="humidity">20% Humidity</li>
-                  <li class="wind">14 km/h Wind</li>
-                  <li class="sunrise">Sunrise: 6:23 AM</li>
-                  <li class="sunset">Sunset: 7:52 PM</li>
-                </ul>
-              </div>
+            </div>
+            <div class="col-6 info">
+              <h1 id="condition">Sunny</h1>
+              <ul>
+                <li class="date">Sunday, August 15</li>
+                <li class="time">11:23 AM</li>
+                <li class="feels">
+                  Feels like <span class="feels-degree">27</span><span>°</span>
+                </li>
+                <li class="humidity">20% Humidity</li>
+                <li class="wind">14 km/h Wind</li>
+                <li class="sunrise">Sunrise: 06:23 AM</li>
+                <li class="sunset">Sunset: 07:52 PM</li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
+
       <div class="card weekdays">
         <div class="row">
           <div class="col-4 day">Monday</div>
@@ -107,14 +105,52 @@
           <div class="col-4 weekday-temp">30° / 23°</div>
         </div>
       </div>
+      <div class="card change-bg">
+        <div class="row">
+          <div class="col-4 title">Wanna change the background?</div>
+          <div class="col-8 buttons">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-secondary" id="clear-day">
+                Clear day
+              </button>
+              <button type="button" class="btn btn-secondary" id="clear-night">
+                Clear night
+              </button>
+              <button type="button" class="btn btn-secondary" id="clouds">
+                Clouds
+              </button>
+              <button type="button" class="btn btn-secondary" id="rain">
+                Rain
+              </button>
+              <button type="button" class="btn btn-secondary" id="thunder">
+                Thunder
+              </button>
+              <button type="button" class="btn btn-secondary" id="snow">
+                Snow
+              </button>
+              <button type="button" class="btn btn-secondary" id="mist">
+                Mist
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       <footer>
-        <a href="https://github.com/arshiin/weather-app" target="_blank"
+        <a
+          class="github"
+          href="https://github.com/arshiin/weather-app"
+          target="_blank"
           >Open-source code</a
         >
-        by Arshin Soltan
+        by
+        <a
+          class="linkedin"
+          href="https://www.linkedin.com/in/arshin-soltan-43a286218"
+          target="_blank"
+          >Arshin Soltan</a
+        >
       </footer>
     </div>
-
     <script src="sources-media/weatherapp.js"></script>
   </body>
 </html>
