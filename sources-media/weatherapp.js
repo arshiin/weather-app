@@ -45,42 +45,47 @@ function showDate() {
 showDate();
 
 function changeTextColors(weatherCondition) {
-  if (weatherCondition == "default") {
-    document.querySelector(".temperature").style.color = "rgb(51, 34, 90)";
-    document.querySelector(".date").style.color = "rgb(165, 133, 226)";
-    document.querySelector(".time").style.color = "rgb(165, 80, 132)";
-    document.querySelector(".feels").style.color = "rgb(78, 150, 124)";
-    document.querySelector(".humidity").style.color = "rgb(75, 149, 192)";
-    document.querySelector(".wind").style.color = "rgb(75, 149, 192)";
-    document.querySelector(".sunrise").style.color = "rgb(255, 136, 61)";
-    document.querySelector(".sunset").style.color = "rgb(75, 69, 112)";
-    document.querySelector(".today").style.boxShadow =
-      "0 8px 32px 0 rgba(116, 117, 134, 0.37)";
-  } else if (weatherCondition == "rain") {
-    document.querySelector(".temperature").style.color = "rgb(255, 255, 255)";
-    document.querySelector(".time").style.color = "rgb(185, 105, 154)";
-    document.querySelector(".feels").style.color = "rgb(174, 212, 85)";
-    document.querySelector(".sunset").style.color = "rgb(179, 167, 248)";
-    document.querySelector(".today").style.boxShadow =
-      "0 8px 32px 0 rgba(183, 184, 204, 0.6)";
-  } else if (weatherCondition == "night") {
-    document.querySelector(".temperature").style.color = "rgb(255, 255, 255)";
-    document.querySelector(".date").style.color = "rgb(194, 176, 228)";
-    document.querySelector(".time").style.color = "rgb(235, 184, 215)";
-    document.querySelector(".sunset").style.color = "rgb(145, 173, 92)";
-    document.querySelector(".today").style.boxShadow =
-      "0 8px 32px 0 rgba(116, 117, 134, 0.37)";
-  } else if (weatherCondition == "thunder") {
-    document.querySelector(".temperature").style.color = "rgb(255, 255, 255)";
-    document.querySelector(".date").style.color = "rgba(66, 24, 145, 0.767)";
-    document.querySelector(".time").style.color = "rgb(165, 80, 132)";
-    document.querySelector(".feels").style.color = "rgb(18, 75, 54)";
-    document.querySelector(".humidity").style.color = "rgb(21, 57, 99)";
-    document.querySelector(".wind").style.color = "rgb(21, 57, 99)";
-    document.querySelector(".sunrise").style.color = "rgb(248, 194, 160)";
-    document.querySelector(".sunset").style.color = "rgb(36, 28, 83)";
-    document.querySelector(".today").style.boxShadow =
-      "0 8px 32px 0 rgba(116, 117, 134, 0.37)";
+  switch (weatherCondition) {
+    case "default":
+      document.querySelector(".temperature").style.color = "rgb(51, 34, 90)";
+      document.querySelector(".date").style.color = "rgb(165, 133, 226)";
+      document.querySelector(".time").style.color = "rgb(165, 80, 132)";
+      document.querySelector(".feels").style.color = "rgb(78, 150, 124)";
+      document.querySelector(".humidity").style.color = "rgb(75, 149, 192)";
+      document.querySelector(".wind").style.color = "rgb(75, 149, 192)";
+      document.querySelector(".sunrise").style.color = "rgb(255, 136, 61)";
+      document.querySelector(".sunset").style.color = "rgb(75, 69, 112)";
+      document.querySelector(".today").style.boxShadow =
+        "0 8px 32px 0 rgba(116, 117, 134, 0.37)";
+      break;
+    case "rain":
+      document.querySelector(".temperature").style.color = "rgb(255, 255, 255)";
+      document.querySelector(".time").style.color = "rgb(185, 105, 154)";
+      document.querySelector(".feels").style.color = "rgb(174, 212, 85)";
+      document.querySelector(".sunset").style.color = "rgb(179, 167, 248)";
+      document.querySelector(".today").style.boxShadow =
+        "0 8px 32px 0 rgba(183, 184, 204, 0.5)";
+      break;
+    case "night":
+      document.querySelector(".temperature").style.color = "rgb(255, 255, 255)";
+      document.querySelector(".date").style.color = "rgb(194, 176, 228)";
+      document.querySelector(".time").style.color = "rgb(235, 184, 215)";
+      document.querySelector(".sunset").style.color = "rgb(145, 173, 92)";
+      document.querySelector(".today").style.boxShadow =
+        "0 8px 20px 0 rgba(183, 184, 204, 0.5)";
+      break;
+    case "thunder":
+      document.querySelector(".temperature").style.color = "rgb(255, 255, 255)";
+      document.querySelector(".date").style.color = "rgba(66, 24, 145, 0.767)";
+      document.querySelector(".time").style.color = "rgb(165, 80, 132)";
+      document.querySelector(".feels").style.color = "rgb(18, 75, 54)";
+      document.querySelector(".humidity").style.color = "rgb(21, 57, 99)";
+      document.querySelector(".wind").style.color = "rgb(21, 57, 99)";
+      document.querySelector(".sunrise").style.color = "rgb(248, 194, 160)";
+      document.querySelector(".sunset").style.color = "rgb(36, 28, 83)";
+      document.querySelector(".today").style.boxShadow =
+        "0 8px 20px 0 rgba(183, 184, 204, 0.5)";
+      break;
   }
 }
 
@@ -247,39 +252,47 @@ function detectCity(event) {
 }
 function changeBg(event) {
   event.preventDefault();
-  if (event.target.id == "clear-day") {
-    document.body.style.backgroundImage =
-      "url('sources-media/images/clear-bg.jpg')";
-    changeTextColors("default");
-  } else if (event.target.id == "clear-night") {
-    document.body.style.backgroundImage =
-      "url('sources-media/images/clearnight-bg.jpg')";
-    changeTextColors("night");
-  } else if (event.target.id == "clouds") {
-    document.body.style.backgroundImage =
-      "url('sources-media/images/cloud-bg.jpg')";
-    changeTextColors("default");
-  } else if (event.target.id == "rain") {
-    document.body.style.backgroundImage =
-      "url('sources-media/images/rain-bg.jpg')";
-    changeTextColors("rain");
-  } else if (event.target.id == "thunder") {
-    document.body.style.backgroundImage =
-      "url('sources-media/images/storm-bg.jpg')";
-    changeTextColors("thunder");
-  } else if (event.target.id == "snow") {
-    document.body.style.backgroundImage =
-      "url('sources-media/images/snow-bg.jpg')";
-    changeTextColors("default");
-  } else if (event.target.id == "mist") {
-    document.body.style.backgroundImage =
-      "url('sources-media/images/fog-bg.jpg')";
-    changeTextColors("default");
+  switch (event.target.id) {
+    case "clear-day":
+      document.body.style.backgroundImage =
+        "url('sources-media/images/clear-bg.jpg')";
+      changeTextColors("default");
+      break;
+    case "clear-night":
+      document.body.style.backgroundImage =
+        "url('sources-media/images/clearnight-bg.jpg')";
+      changeTextColors("night");
+      break;
+    case "clouds":
+      document.body.style.backgroundImage =
+        "url('sources-media/images/cloud-bg.jpg')";
+      changeTextColors("default");
+      break;
+    case "rain":
+      document.body.style.backgroundImage =
+        "url('sources-media/images/rain-bg.jpg')";
+      changeTextColors("rain");
+      break;
+    case "thunder":
+      document.body.style.backgroundImage =
+        "url('sources-media/images/storm-bg.jpg')";
+      changeTextColors("thunder");
+      break;
+    case "snow":
+      document.body.style.backgroundImage =
+        "url('sources-media/images/snow-bg.jpg')";
+      changeTextColors("default");
+      break;
+    case "mist":
+      document.body.style.backgroundImage =
+        "url('sources-media/images/fog-bg.jpg')";
+      changeTextColors("default");
+      break;
   }
 }
 
 let buttons = document.querySelectorAll(".btn-secondary");
-buttons.forEach((btn) => {
+buttons.forEach(function (btn) {
   btn.addEventListener("click", changeBg);
 });
 
