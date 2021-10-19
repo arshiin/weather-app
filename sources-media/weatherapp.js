@@ -42,12 +42,11 @@ function showDate() {
   date.innerHTML = `${currentDay}, ${currentMonth} ${currentDate}`;
   time.innerHTML = `${hour}:${minutes}`;
 }
-showDate();
 
 function changeTextColors(weatherCondition) {
   switch (weatherCondition) {
     case "default":
-      document.querySelector(".temperature").style.color = "rgb(51, 34, 90)";
+      document.querySelector(".main-info").style.color = "rgb(51, 34, 90)";
       document.querySelector(".date").style.color = "rgb(165, 133, 226)";
       document.querySelector(".time").style.color = "rgb(165, 80, 132)";
       document.querySelector(".feels").style.color = "rgb(78, 150, 124)";
@@ -59,7 +58,7 @@ function changeTextColors(weatherCondition) {
         "0 8px 32px 0 rgba(116, 117, 134, 0.37)";
       break;
     case "rain":
-      document.querySelector(".temperature").style.color = "rgb(255, 255, 255)";
+      document.querySelector(".main-info").style.color = "rgb(255, 255, 255)";
       document.querySelector(".time").style.color = "rgb(185, 105, 154)";
       document.querySelector(".feels").style.color = "rgb(174, 212, 85)";
       document.querySelector(".sunset").style.color = "rgb(179, 167, 248)";
@@ -67,7 +66,7 @@ function changeTextColors(weatherCondition) {
         "0 8px 32px 0 rgba(183, 184, 204, 0.5)";
       break;
     case "night":
-      document.querySelector(".temperature").style.color = "rgb(255, 255, 255)";
+      document.querySelector(".main-info").style.color = "rgb(255, 255, 255)";
       document.querySelector(".date").style.color = "rgb(194, 176, 228)";
       document.querySelector(".time").style.color = "rgb(235, 184, 215)";
       document.querySelector(".sunset").style.color = "rgb(145, 173, 92)";
@@ -75,7 +74,7 @@ function changeTextColors(weatherCondition) {
         "0 8px 20px 0 rgba(183, 184, 204, 0.5)";
       break;
     case "thunder":
-      document.querySelector(".temperature").style.color = "rgb(255, 255, 255)";
+      document.querySelector(".main-info").style.color = "rgb(255, 255, 255)";
       document.querySelector(".date").style.color = "rgba(66, 24, 145, 0.767)";
       document.querySelector(".time").style.color = "rgb(165, 80, 132)";
       document.querySelector(".feels").style.color = "rgb(18, 75, 54)";
@@ -99,13 +98,13 @@ function showWeather(response) {
   fahrenheitButton.classList.remove("active");
   fahrenheitButton.removeAttribute("disabled");
   // to go back to default unit (celsius) when a new city is searched
-  document.querySelector(".max").innerHTML = Math.round(
+  document.querySelector("#today-max").innerHTML = Math.round(
     response.data.main.temp_max
   ); // max temp
-  document.querySelector(".min").innerHTML = Math.round(
+  document.querySelector("#today-min").innerHTML = Math.round(
     response.data.main.temp_min
   ); // min temp
-  document.querySelector(".feels-degree").innerHTML = Math.round(
+  document.querySelector("#feels-temp").innerHTML = Math.round(
     response.data.main.feels_like
   ); // feels like temp
   document.querySelector(".humidity").innerHTML = `${Math.round(
@@ -194,13 +193,83 @@ function showWeather(response) {
       "url('sources-media/images/fog-bg.jpg')";
     changeTextColors("default");
   }
+  getForecast(response.data.coord);
+}
+function showForecast(response) {
+  let forecast = response.data.daily;
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let forecastCard = document.querySelector("#forecast-cards");
+  let forecastHTML = ``;
+  forecast.forEach(function (forecastDay, index) {
+    if (index > 0 && index < 6) {
+      let forecastDate = new Date(forecastDay.dt * 1000);
+      let emoji = ``;
+      switch (forecastDay.weather[0].main) {
+        case "Clear":
+          emoji = "☀";
+          break;
+        case "Rain":
+          emoji = "🌧";
+          break;
+        case "Drizzle":
+          emoji = "🌧";
+          break;
+        case "Clouds":
+          emoji = "☁";
+          break;
+        case "Thunderstorm":
+          emoji = "⛈";
+          break;
+        case "Snow":
+          emoji = "🌨";
+          break;
+        case "Atmosphere":
+          emoji = "🌫";
+          break;
+      }
+      forecastHTML += `<div class="card weekdays">
+          <div class="row">
+            <div class="col-4 day">${days[forecastDate.getDay()]}</div>
+            <div class="col-4 emoji">${emoji}</div>
+            <div class="col-4 weekday-temp">
+              <span id="forecast-max" class="temperature">${Math.round(
+                forecastDay.temp.max
+              )}</span><span>° / </span><span id="forecast-min" class="temperature">${Math.round(
+        forecastDay.temp.min
+      )}</span><span></span>°
+            </div>
+          </div>
+        </div>`;
+    }
+    forecastCard.innerHTML = forecastHTML;
+  });
 }
 
+function getForecast(coords) {
+  let apiKey = "6782253072f7d90462731a624097fc54";
+  let forecastApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&appid=${apiKey}&units=metric`;
+  axios.get(forecastApiUrl).then(showForecast);
+}
 function showCity(event) {
   event.preventDefault();
   let cityName = document.querySelector("#city-input").value; // city name for api URL
   let apiKey = "6782253072f7d90462731a624097fc54";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
+}
+function showDefaultCity() {
+  let defaultCityName = document.querySelector(".city-name").innerHTML;
+  let apiKey = "6782253072f7d90462731a624097fc54";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${defaultCityName}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
 
@@ -211,14 +280,10 @@ function getCelsius(event) {
   fahrenheitButton.classList.remove("active");
   fahrenheitButton.removeAttribute("disabled");
 
-  let currentTemp = document.querySelector(".current-temp");
-  let max = document.querySelector(".max");
-  let min = document.querySelector(".min");
-  let feelsDegree = document.querySelector(".feels-degree");
-  currentTemp.innerHTML = Math.round((currentTemp.innerHTML - 32) / 1.8);
-  max.innerHTML = Math.round((max.innerHTML - 32) / 1.8);
-  min.innerHTML = Math.round((min.innerHTML - 32) / 1.8);
-  feelsDegree.innerHTML = Math.round((feelsDegree.innerHTML - 32) / 1.8);
+  let temperature = document.querySelectorAll(".temperature");
+  temperature.forEach(function (tempValue) {
+    tempValue.innerHTML = Math.round((tempValue.innerHTML - 32) / 1.8);
+  });
 }
 
 function getFahrenheit(event) {
@@ -228,15 +293,10 @@ function getFahrenheit(event) {
   fahrenheitButton.classList.add("active");
   fahrenheitButton.setAttribute("disabled", true);
 
-  let currentTemp = document.querySelector(".current-temp");
-  let max = document.querySelector(".max");
-  let min = document.querySelector(".min");
-  let feelsDegree = document.querySelector(".feels-degree");
-
-  currentTemp.innerHTML = Math.round(currentTemp.innerHTML * 1.8 + 32);
-  max.innerHTML = Math.round(max.innerHTML * 1.8 + 32);
-  min.innerHTML = Math.round(min.innerHTML * 1.8 + 32);
-  feelsDegree.innerHTML = Math.round(feelsDegree.innerHTML * 1.8 + 32);
+  let temperature = document.querySelectorAll(".temperature");
+  temperature.forEach(function (tempValue) {
+    tempValue.innerHTML = Math.round(tempValue.innerHTML * 1.8 + 32);
+  });
 }
 
 function getCoords(position) {
@@ -292,10 +352,12 @@ function changeBg(event) {
 }
 
 let buttons = document.querySelectorAll(".btn-secondary");
-buttons.forEach(function (btn) {
-  btn.addEventListener("click", changeBg);
+buttons.forEach(function (button) {
+  button.addEventListener("click", changeBg);
 });
 
+showDate();
+showDefaultCity();
 let submitCity = document.querySelector("#search-form");
 submitCity.addEventListener("submit", showCity);
 let locationButton = document.querySelector("#location");

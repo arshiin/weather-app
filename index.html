@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Capriola&family=Raleway:wght@400;600&family=Lexend+Deca:wght@200;300;400;500&family=Saira+Semi+Condensed:wght@600&family=Alata&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Capriola&family=Raleway:wght@400;600&family=Lexend+Deca:wght@200;300;400;500&family=Alata&display=swap"
       rel="stylesheet"
     />
     <link
@@ -36,7 +36,7 @@
         <div class="card-body">
           <div class="city-name">Tehran</div>
           <div class="row">
-            <div class="col-6 temperature">
+            <div class="col-6 main-info">
               <img
                 class="condition"
                 src="sources-media/images/sunny.gif"
@@ -47,18 +47,18 @@
                 <button class="celsius active" disabled>C</button
                 ><button class="fahrenheit">F</button>
                 <div class="minmax">
-                  <span class="max">32</span><span>° / </span>
-                  <span class="min">22</span><span>°</span>
+                  <span id="today-max" class="temperature">32</span><span>° / </span>
+                  <span id="today-min" class="temperature">22</span><span>°</span>
                 </div>
               </div>
             </div>
-            <div class="col-6 info">
+            <div class="col-6 other-info">
               <h1 id="condition">Sunny</h1>
               <ul>
                 <li class="date">Sunday, August 15</li>
                 <li class="time">11:23 AM</li>
                 <li class="feels">
-                  Feels like <span class="feels-degree">27</span><span>°</span>
+                  Feels like <span id="feels-temp" class="temperature">27</span><span>°</span>
                 </li>
                 <li class="humidity">20% Humidity</li>
                 <li class="wind">14 km/h Wind</li>
@@ -69,42 +69,7 @@
           </div>
         </div>
       </div>
-
-      <div class="card weekdays">
-        <div class="row">
-          <div class="col-4 day">Monday</div>
-          <div class="col-4 emoji">☁</div>
-          <div class="col-4 weekday-temp">28° / 19°</div>
-        </div>
-      </div>
-      <div class="card weekdays">
-        <div class="row">
-          <div class="col-4 day">Tuesday</div>
-          <div class="col-4 emoji">⛅</div>
-          <div class="col-4 weekday-temp">30° / 22°</div>
-        </div>
-      </div>
-      <div class="card weekdays">
-        <div class="row">
-          <div class="col-4 day">Wednesday</div>
-          <div class="col-4 emoji">🌧</div>
-          <div class="col-4 weekday-temp">23° / 15°</div>
-        </div>
-      </div>
-      <div class="card weekdays">
-        <div class="row">
-          <div class="col-4 day">Thursday</div>
-          <div class="col-4 emoji">☁</div>
-          <div class="col-4 weekday-temp">25° / 18°</div>
-        </div>
-      </div>
-      <div class="card weekdays">
-        <div class="row">
-          <div class="col-4 day">Friday</div>
-          <div class="col-4 emoji">☀</div>
-          <div class="col-4 weekday-temp">30° / 23°</div>
-        </div>
-      </div>
+      <section id="forecast-cards"></section>
       <div class="card change-bg">
         <div class="row">
           <div class="col-4 title">Wanna change the background?</div>
@@ -140,6 +105,7 @@
           class="github"
           href="https://github.com/arshiin/weather-app"
           target="_blank"
+          rel="noopener noreferrer"
           >Open-source code</a
         >
         by
@@ -147,6 +113,7 @@
           class="linkedin"
           href="https://www.linkedin.com/in/arshin-soltan-43a286218"
           target="_blank"
+          rel="noopener noreferrer"
           >Arshin Soltan</a
         >
       </footer>

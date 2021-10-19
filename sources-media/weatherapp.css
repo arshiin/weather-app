@@ -50,7 +50,7 @@ body {
   font-family: "Alata", sans-serif;
   color: rgb(206, 104, 180);
 }
-.temperature {
+.main-info {
   position: relative;
   font-size: 60px;
   font-family: "Raleway", sans-serif;
@@ -61,7 +61,7 @@ body {
   padding: 0;
   padding-left: 80px;
 }
-.temperature img {
+.main-info img {
   display: block;
   margin: 0 auto;
   width: 200px;
@@ -100,10 +100,10 @@ body {
   font-size: 20px;
   margin-top: 5px;
 }
-.minmax .max {
+.minmax #today-max {
   font-weight: 700;
 }
-.info {
+.other-info {
   position: relative;
   font-size: 22px;
   padding-left: 90px;
@@ -111,39 +111,39 @@ body {
   font-family: "Lexend Deca", sans-serif;
   font-weight: 400;
 }
-.info ul {
+.other-info ul {
   list-style-type: none;
   padding: 0;
 }
-.info h1 {
+.other-info h1 {
   color: rgb(255, 255, 255);
   letter-spacing: -1px;
   font-size: 48px;
 }
-.info .date {
+.other-info .date {
   color: rgb(165, 133, 226);
   font-size: 24px;
 }
-.info .time {
+.other-info .time {
   font-size: 26px;
   color: rgb(165, 80, 132);
 }
-.info .feels {
+.other-info #feels-temp {
   color: rgb(78, 150, 124);
   font-size: 24px;
   margin-bottom: 15px;
 }
-.info .humidity,
+.other-info .humidity,
 .wind {
   color: rgb(75, 149, 192);
   font-size: 20px;
 }
-.info .sunrise {
+.other-info .sunrise {
   color: rgb(255, 136, 61);
   font-size: 20px;
   margin-top: 15px;
 }
-.info .sunset {
+.other-info .sunset {
   color: rgb(75, 69, 112);
   font-size: 20px;
 }
@@ -216,8 +216,13 @@ body {
 }
 .weekdays .weekday-temp {
   font-size: 24px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
   text-align: right;
   padding-top: 10px;
+}
+#forecast-max{
+  font-weight: 600;
 }
 footer {
   text-align: center;
