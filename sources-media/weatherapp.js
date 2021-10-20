@@ -90,7 +90,7 @@ function changeTextColors(weatherCondition) {
 
 function showWeather(response) {
   document.querySelector(".city-name").innerHTML = response.data.name; // city name
-  document.querySelector(".current-temp").innerHTML = Math.round(
+  document.querySelector("#current-temp").innerHTML = Math.round(
     response.data.main.temp
   ); // city temperature
   celsiusButton.classList.add("active");
@@ -181,6 +181,7 @@ function showWeather(response) {
     document.body.style.backgroundImage =
       "url('sources-media/images/snow-bg.jpg')";
     changeTextColors("default");
+    document.querySelector("h1").style.color = "rgb(63, 63, 63)";
   } else if (description == "Thunderstorm") {
     conditionImage.src = "sources-media/images/stormy.gif";
     document.body.style.backgroundImage =
@@ -342,6 +343,7 @@ function changeBg(event) {
       document.body.style.backgroundImage =
         "url('sources-media/images/snow-bg.jpg')";
       changeTextColors("default");
+      document.querySelector("h1").style.color = "rgb(63, 63, 63)";
       break;
     case "mist":
       document.body.style.backgroundImage =
