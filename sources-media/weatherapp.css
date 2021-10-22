@@ -57,9 +57,7 @@ body {
   font-weight: 300;
   color: rgb(51, 34, 90);
   text-align: center;
-  left: -40px;
   padding: 0;
-  padding-left: 80px;
 }
 .main-info img {
   display: block;
@@ -128,7 +126,8 @@ body {
   font-size: 26px;
   color: rgb(165, 80, 132);
 }
-.other-info #feels-temp {
+.other-info #feels-temp,
+.feels {
   color: rgb(78, 150, 124);
   font-size: 24px;
   margin-bottom: 15px;
@@ -171,7 +170,7 @@ body {
 }
 .change-bg .buttons .btn-secondary {
   font-size: 11px;
-  border: none;
+  border: transparent;
   font-family: "Capriola", sans-serif;
 }
 .change-bg .buttons #clear-day {
@@ -200,13 +199,16 @@ body {
 .weekdays {
   margin: 15px 0;
   padding: 5px 20px;
-  border: 5px solid rgba(220, 156, 250, 0.6);
+  border: 4px solid rgba(161, 141, 207, 0.74);
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(116, 117, 134, 0.37);
   backdrop-filter: blur(10px);
   border-radius: 30px;
 }
 .weekdays .day {
+  font-family: "Lexend Deca", sans-serif;
+  color: rgb(51, 34, 90);
+  font-weight: 300;
   font-size: 25px;
   line-height: 64px;
 }
@@ -216,13 +218,32 @@ body {
 }
 .weekdays .weekday-temp {
   font-size: 24px;
+  color: rgb(22, 43, 110);
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   text-align: right;
   padding-top: 10px;
 }
-#forecast-max{
+#forecast-max {
   font-weight: 600;
+}
+.spotify {
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: transparent
+}
+.spotify p {
+  text-align: center;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+}
+.spotify span {
+  font-size: 14px;
+}
+iframe {
+  border-radius: 12px;
 }
 footer {
   text-align: center;

@@ -47,43 +47,74 @@ function changeTextColors(weatherCondition) {
   switch (weatherCondition) {
     case "default":
       document.querySelector(".main-info").style.color = "rgb(51, 34, 90)";
+      document.querySelector("#condition").style.color = "rgb(255, 255, 255)";
       document.querySelector(".date").style.color = "rgb(165, 133, 226)";
       document.querySelector(".time").style.color = "rgb(165, 80, 132)";
       document.querySelector(".feels").style.color = "rgb(78, 150, 124)";
+      document.querySelector("#feels-temp").style.color = "rgb(78, 150, 124)";
       document.querySelector(".humidity").style.color = "rgb(75, 149, 192)";
       document.querySelector(".wind").style.color = "rgb(75, 149, 192)";
       document.querySelector(".sunrise").style.color = "rgb(255, 136, 61)";
       document.querySelector(".sunset").style.color = "rgb(75, 69, 112)";
       document.querySelector(".today").style.boxShadow =
         "0 8px 32px 0 rgba(116, 117, 134, 0.37)";
+      document.querySelector(".spotify p").style.color = "rgb(255, 255, 255)";
+      document.querySelector(".spotify").style.background =
+        "rgba(255, 255, 255, 0.2)";
+      document.querySelector(".change-bg .title").style.color =
+        "rgb(255, 255, 255";
       break;
     case "rain":
       document.querySelector(".main-info").style.color = "rgb(255, 255, 255)";
+      document.querySelector("#condition").style.color = "rgb(255, 255, 255)";
       document.querySelector(".time").style.color = "rgb(185, 105, 154)";
       document.querySelector(".feels").style.color = "rgb(174, 212, 85)";
+      document.querySelector("#feels-temp").style.color = "rgb(174, 212, 85)";
+      document.querySelector(".humidity").style.color = "rgb(129, 203, 247)";
+      document.querySelector(".wind").style.color = "rgb(129, 203, 247);";
       document.querySelector(".sunset").style.color = "rgb(179, 167, 248)";
       document.querySelector(".today").style.boxShadow =
         "0 8px 32px 0 rgba(183, 184, 204, 0.5)";
+      document.querySelector(".spotify p").style.color = "rgb(255, 255, 255)";
+      document.querySelector(".spotify").style.background =
+        "rgba(255, 255, 255, 0.2)";
+      document.querySelector(".change-bg .title").style.color =
+        "rgb(255, 255, 255";
       break;
     case "night":
       document.querySelector(".main-info").style.color = "rgb(255, 255, 255)";
+      document.querySelector("#condition").style.color = "rgb(255, 255, 255)";
       document.querySelector(".date").style.color = "rgb(194, 176, 228)";
       document.querySelector(".time").style.color = "rgb(235, 184, 215)";
+      document.querySelector(".humidity").style.color = "rgb(129, 203, 247)";
+      document.querySelector(".wind").style.color = "rgb(129, 203, 247)";
       document.querySelector(".sunset").style.color = "rgb(145, 173, 92)";
       document.querySelector(".today").style.boxShadow =
         "0 8px 20px 0 rgba(183, 184, 204, 0.5)";
+      document.querySelector(".spotify p").style.color = "rgb(255, 255, 255)";
+      document.querySelector(".spotify").style.background =
+        "rgba(255, 255, 255, 0.2)";
+      document.querySelector(".change-bg .title").style.color =
+        "rgb(255, 255, 255";
       break;
     case "thunder":
       document.querySelector(".main-info").style.color = "rgb(255, 255, 255)";
+      document.querySelector("#condition").style.color = "rgb(255, 255, 255)";
       document.querySelector(".date").style.color = "rgba(66, 24, 145, 0.767)";
-      document.querySelector(".time").style.color = "rgb(165, 80, 132)";
+      document.querySelector(".time").style.color = "rgb(123, 25, 85)";
       document.querySelector(".feels").style.color = "rgb(18, 75, 54)";
+      document.querySelector("#feels-temp").style.color = "rgb(18, 75, 54)";
       document.querySelector(".humidity").style.color = "rgb(21, 57, 99)";
       document.querySelector(".wind").style.color = "rgb(21, 57, 99)";
-      document.querySelector(".sunrise").style.color = "rgb(248, 194, 160)";
-      document.querySelector(".sunset").style.color = "rgb(36, 28, 83)";
+      document.querySelector(".sunrise").style.color = "rgb(139, 64, 64)";
+      document.querySelector(".sunset").style.color = "rgb(56, 75, 148)";
       document.querySelector(".today").style.boxShadow =
         "0 8px 20px 0 rgba(183, 184, 204, 0.5)";
+      document.querySelector(".spotify p").style.color = "rgb(255, 255, 255)";
+      document.querySelector(".spotify").style.background =
+        "rgba(255, 255, 255, 0.2)";
+      document.querySelector(".change-bg .title").style.color =
+        "rgb(255, 255, 255";
       break;
   }
 }
@@ -151,47 +182,86 @@ function showWeather(response) {
   let hour = currentTime.getHours();
   if (
     description == "Clear" &&
-    sunriseTime.getHours() < hour &&
-    hour < sunsetTime.getHours()
+    sunriseTime.getHours() <= hour &&
+    hour <= sunsetTime.getHours()
   ) {
     conditionImage.src = "sources-media/images/sunny.gif";
     document.body.style.backgroundImage =
       "url('sources-media/images/clear-bg.jpg')";
+    document.querySelector(
+      "#song"
+    ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/0DRvClQbN9znQ295sx76VC?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
+    document.querySelector(
+      "#song"
+    ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/0DRvClQbN9znQ295sx76VC?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen=""></iframe>`;
     changeTextColors("default");
   } else if (
     (description == "Clear" && hour > sunsetTime.getHours()) ||
-    (description == "Clear" && hour > 0 && hour < sunriseTime.getHours())
+    (description == "Clear" && hour >= 0 && hour < sunriseTime.getHours())
   ) {
     conditionImage.src = "sources-media/images/clearnight.gif";
     document.body.style.backgroundImage =
       "url('sources-media/images/clearnight-bg.jpg')";
+    document.querySelector(
+      "#song"
+    ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/3FzK2g50oLcx8vqETwOn07?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
     changeTextColors("night");
   } else if (description == "Clouds") {
     conditionImage.src = "sources-media/images/cloudy.gif";
     document.body.style.backgroundImage =
       "url('sources-media/images/cloud-bg.jpg')";
+    document.querySelector(
+      "#song"
+    ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/2kSb3wYSOV996xA2NSmpck?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
     changeTextColors("default");
-  } else if (description == "Rain" || description == "Drizzle") {
+    document.querySelector(".spotify p").style.color = "rgb(0, 0, 0)";
+    document.querySelector(".spotify").style.background =
+      "rgba(255, 255, 255, 0.3)";
+  } else if (description == "Rain") {
     conditionImage.src = "sources-media/images/rainy.gif";
     document.body.style.backgroundImage =
       "url('sources-media/images/rain-bg.jpg')";
+    document.querySelector(
+      "#song"
+    ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/0Ls4WLphg1obbq7wTPiy7k?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">`;
     changeTextColors("rain");
-  } else if (description == "Snow") {
-    conditionImage.src = "sources-media/images/snowy.gif";
+  } else if (description == "Drizzle") {
+    conditionImage.src = "sources-media/images/rainy.gif";
     document.body.style.backgroundImage =
-      "url('sources-media/images/snow-bg.jpg')";
-    changeTextColors("default");
-    document.querySelector("h1").style.color = "rgb(63, 63, 63)";
+      "url('sources-media/images/rain-bg.jpg')";
+    document.querySelector(
+      "#song"
+    ).innerHTML = `</iframe> <iframe src="https://open.spotify.com/embed/track/3NwTDLpZRmyOTaOtGoVm8X?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
+    changeTextColors("rain");
   } else if (description == "Thunderstorm") {
     conditionImage.src = "sources-media/images/stormy.gif";
     document.body.style.backgroundImage =
       "url('sources-media/images/storm-bg.jpg')";
+    document.querySelector(
+      "#song"
+    ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/0GwcBK821xPuRklr4Hptdc?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
     changeTextColors("thunder");
     document.querySelector("#condition").style.fontSize = "34px";
+  } else if (description == "Snow") {
+    conditionImage.src = "sources-media/images/snowy.gif";
+    document.body.style.backgroundImage =
+      "url('sources-media/images/snow-bg.jpg')";
+    document.querySelector(
+      "#song"
+    ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/11607FzqoipskTsXrwEHnJ?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
+    changeTextColors("default");
+    document.querySelector(".spotify p").style.color = "rgb(0, 0, 0)";
+    document.querySelector(".spotify").style.background =
+      "rgba(221, 221, 221, 0.4)";
+    document.querySelector("h1").style.color = "rgb(63, 63, 63)";
+    document.querySelector(".change-bg .title").style.color = "rgb(0, 0, 0)";
   } else {
     conditionImage.src = "sources-media/images/foggy.gif";
     document.body.style.backgroundImage =
       "url('sources-media/images/fog-bg.jpg')";
+    document.querySelector(
+      "#song"
+    ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/2LvG58eKXKf6V6MUnsvNmw?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
     changeTextColors("default");
   }
   getForecast(response.data.coord);
@@ -317,37 +387,65 @@ function changeBg(event) {
     case "clear-day":
       document.body.style.backgroundImage =
         "url('sources-media/images/clear-bg.jpg')";
+      document.querySelector(
+        "#song"
+      ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/0DRvClQbN9znQ295sx76VC?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
       changeTextColors("default");
       break;
     case "clear-night":
       document.body.style.backgroundImage =
         "url('sources-media/images/clearnight-bg.jpg')";
+      document.querySelector(
+        "#song"
+      ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/3FzK2g50oLcx8vqETwOn07?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
       changeTextColors("night");
       break;
     case "clouds":
       document.body.style.backgroundImage =
         "url('sources-media/images/cloud-bg.jpg')";
+      document.querySelector(
+        "#song"
+      ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/2kSb3wYSOV996xA2NSmpck?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
       changeTextColors("default");
+      document.querySelector(".spotify p").style.color = "rgb(0, 0, 0)";
+      document.querySelector(".spotify").style.background =
+        "rgba(255, 255, 255, 0.3)";
       break;
     case "rain":
       document.body.style.backgroundImage =
         "url('sources-media/images/rain-bg.jpg')";
+      document.querySelector(
+        "#song"
+      ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/0Ls4WLphg1obbq7wTPiy7k?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe> <iframe src="https://open.spotify.com/embed/track/3NwTDLpZRmyOTaOtGoVm8X?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
       changeTextColors("rain");
       break;
     case "thunder":
       document.body.style.backgroundImage =
         "url('sources-media/images/storm-bg.jpg')";
+      document.querySelector(
+        "#song"
+      ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/0GwcBK821xPuRklr4Hptdc?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
       changeTextColors("thunder");
       break;
     case "snow":
       document.body.style.backgroundImage =
         "url('sources-media/images/snow-bg.jpg')";
+      document.querySelector(
+        "#song"
+      ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/11607FzqoipskTsXrwEHnJ?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
       changeTextColors("default");
+      document.querySelector(".spotify p").style.color = "rgb(0, 0, 0)";
+      document.querySelector(".spotify").style.background =
+        "rgba(221, 221, 221, 0.4)";
       document.querySelector("h1").style.color = "rgb(63, 63, 63)";
+      document.querySelector(".change-bg .title").style.color = "rgb(0, 0, 0)";
       break;
     case "mist":
       document.body.style.backgroundImage =
         "url('sources-media/images/fog-bg.jpg')";
+      document.querySelector(
+        "#song"
+      ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/2LvG58eKXKf6V6MUnsvNmw?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
       changeTextColors("default");
       break;
   }

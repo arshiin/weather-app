@@ -43,12 +43,15 @@
                 alt="sunny"
               />
               <div class="temp-degrees">
-                <span id="current-temp" class="temperature">25</span><span>°</span>
+                <span id="current-temp" class="temperature">25</span
+                ><span>°</span>
                 <button class="celsius active" disabled>C</button
                 ><button class="fahrenheit">F</button>
                 <div class="minmax">
-                  <span id="today-max" class="temperature">32</span><span>° / </span>
-                  <span id="today-min" class="temperature">22</span><span>°</span>
+                  <span id="today-max" class="temperature">32</span
+                  ><span>° / </span>
+                  <span id="today-min" class="temperature">22</span
+                  ><span>°</span>
                 </div>
               </div>
             </div>
@@ -58,7 +61,8 @@
                 <li class="date">Sunday, August 15</li>
                 <li class="time">11:23 AM</li>
                 <li class="feels">
-                  Feels like <span id="feels-temp" class="temperature">27</span><span>°</span>
+                  Feels like <span id="feels-temp" class="temperature">27</span
+                  ><span>°</span>
                 </li>
                 <li class="humidity">20% Humidity</li>
                 <li class="wind">14 km/h Wind</li>
@@ -70,6 +74,24 @@
         </div>
       </div>
       <section id="forecast-cards"></section>
+      <section id="spotify-qotd">
+        <div class="row">
+          <div class="col-6">
+            <div class="card spotify">
+              <div class="card-body">
+                <p>
+                  Enjoy this beautiful weather with some good music! <br />
+                  <span>(Don't forget to log in to play the full song)</span>
+                </p>
+                <div id="song"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card qotd"><div class="card-body"></div></div>
+          </div>
+        </div>
+      </section>
       <div class="card change-bg">
         <div class="row">
           <div class="col-4 title">Wanna change the background?</div>
