@@ -59,27 +59,10 @@ function changeTextColors(weatherCondition) {
       document.querySelector(".today").style.boxShadow =
         "0 8px 32px 0 rgba(116, 117, 134, 0.37)";
       document.querySelector(".spotify p").style.color = "rgb(255, 255, 255)";
-      document.querySelector(".spotify").style.background =
-        "rgba(255, 255, 255, 0.2)";
+      document.querySelector(".qotd h2").style.color = "rgb(255, 255, 255)";
+      document.querySelector(".qotd p").style.color = "rgb(255, 255, 255)";
       document.querySelector(".change-bg .title").style.color =
-        "rgb(255, 255, 255";
-      break;
-    case "rain":
-      document.querySelector(".main-info").style.color = "rgb(255, 255, 255)";
-      document.querySelector("#condition").style.color = "rgb(255, 255, 255)";
-      document.querySelector(".time").style.color = "rgb(185, 105, 154)";
-      document.querySelector(".feels").style.color = "rgb(174, 212, 85)";
-      document.querySelector("#feels-temp").style.color = "rgb(174, 212, 85)";
-      document.querySelector(".humidity").style.color = "rgb(129, 203, 247)";
-      document.querySelector(".wind").style.color = "rgb(129, 203, 247);";
-      document.querySelector(".sunset").style.color = "rgb(179, 167, 248)";
-      document.querySelector(".today").style.boxShadow =
-        "0 8px 32px 0 rgba(183, 184, 204, 0.5)";
-      document.querySelector(".spotify p").style.color = "rgb(255, 255, 255)";
-      document.querySelector(".spotify").style.background =
-        "rgba(255, 255, 255, 0.2)";
-      document.querySelector(".change-bg .title").style.color =
-        "rgb(255, 255, 255";
+        "rgb(255, 255, 255)";
       break;
     case "night":
       document.querySelector(".main-info").style.color = "rgb(255, 255, 255)";
@@ -92,10 +75,27 @@ function changeTextColors(weatherCondition) {
       document.querySelector(".today").style.boxShadow =
         "0 8px 20px 0 rgba(183, 184, 204, 0.5)";
       document.querySelector(".spotify p").style.color = "rgb(255, 255, 255)";
-      document.querySelector(".spotify").style.background =
-        "rgba(255, 255, 255, 0.2)";
+      document.querySelector(".qotd h2").style.color = "rgb(255, 255, 255)";
+      document.querySelector(".qotd p").style.color = "rgb(255, 255, 255)";
       document.querySelector(".change-bg .title").style.color =
-        "rgb(255, 255, 255";
+        "rgb(255, 255, 255)";
+      break;
+    case "rain":
+      document.querySelector(".main-info").style.color = "rgb(255, 255, 255)";
+      document.querySelector("#condition").style.color = "rgb(255, 255, 255)";
+      document.querySelector(".time").style.color = "rgb(185, 105, 154)";
+      document.querySelector(".feels").style.color = "rgb(174, 212, 85)";
+      document.querySelector("#feels-temp").style.color = "rgb(174, 212, 85)";
+      document.querySelector(".humidity").style.color = "rgb(129, 203, 247)";
+      document.querySelector(".wind").style.color = "rgb(129, 203, 247)";
+      document.querySelector(".sunset").style.color = "rgb(179, 167, 248)";
+      document.querySelector(".today").style.boxShadow =
+        "0 8px 32px 0 rgba(183, 184, 204, 0.5)";
+      document.querySelector(".spotify p").style.color = "rgb(255, 255, 255)";
+      document.querySelector(".qotd h2").style.color = "rgb(255, 255, 255)";
+      document.querySelector(".qotd p").style.color = "rgb(255, 255, 255)";
+      document.querySelector(".change-bg .title").style.color =
+        "rgb(255, 255, 255)";
       break;
     case "thunder":
       document.querySelector(".main-info").style.color = "rgb(255, 255, 255)";
@@ -111,11 +111,29 @@ function changeTextColors(weatherCondition) {
       document.querySelector(".today").style.boxShadow =
         "0 8px 20px 0 rgba(183, 184, 204, 0.5)";
       document.querySelector(".spotify p").style.color = "rgb(255, 255, 255)";
-      document.querySelector(".spotify").style.background =
-        "rgba(255, 255, 255, 0.2)";
+      document.querySelector(".qotd h2").style.color = "rgb(255, 255, 255)";
+      document.querySelector(".qotd p").style.color = "rgb(255, 255, 255)";
       document.querySelector(".change-bg .title").style.color =
-        "rgb(255, 255, 255";
+        "rgb(255, 255, 255)";
       break;
+    case "snow":
+      document.querySelector(".main-info").style.color = "rgb(51, 34, 90)";
+      document.querySelector("#condition").style.color = "rgb(255, 255, 255)";
+      document.querySelector(".date").style.color = "rgb(165, 133, 226)";
+      document.querySelector(".time").style.color = "rgb(165, 80, 132)";
+      document.querySelector(".feels").style.color = "rgb(78, 150, 124)";
+      document.querySelector("#feels-temp").style.color = "rgb(78, 150, 124)";
+      document.querySelector(".humidity").style.color = "rgb(75, 149, 192)";
+      document.querySelector(".wind").style.color = "rgb(75, 149, 192)";
+      document.querySelector(".sunrise").style.color = "rgb(255, 136, 61)";
+      document.querySelector(".sunset").style.color = "rgb(75, 69, 112)";
+      document.querySelector(".today").style.boxShadow =
+        "0 8px 32px 0 rgba(116, 117, 134, 0.37)";
+      document.querySelector(".spotify p").style.color = "rgb(0, 0, 0)";
+      document.querySelector(".qotd h2").style.color = "rgb(0, 0, 0)";
+      document.querySelector(".qotd p").style.color = "rgb(0, 0, 0)";
+      document.querySelector(".change-bg .title").style.color = "rgb(0, 0, 0)";
+      document.querySelector("h1").style.color = "rgb(63, 63, 63)";
   }
 }
 
@@ -175,7 +193,7 @@ function showWeather(response) {
     ".sunset"
   ).innerHTML = `Sunset: ${sunsetHours}:${sunsetMinutes} PM`;
   let condition = document.querySelector("#condition");
-  let conditionImage = document.querySelector(".condition");
+  let conditionImage = document.querySelector(".weather-icon");
   let description = response.data.weather[0].main;
   condition.innerHTML = description;
   conditionImage.alt = description;
@@ -191,9 +209,6 @@ function showWeather(response) {
     document.querySelector(
       "#song"
     ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/0DRvClQbN9znQ295sx76VC?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
-    document.querySelector(
-      "#song"
-    ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/0DRvClQbN9znQ295sx76VC?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen=""></iframe>`;
     changeTextColors("default");
   } else if (
     (description == "Clear" && hour > sunsetTime.getHours()) ||
@@ -215,8 +230,8 @@ function showWeather(response) {
     ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/2kSb3wYSOV996xA2NSmpck?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
     changeTextColors("default");
     document.querySelector(".spotify p").style.color = "rgb(0, 0, 0)";
-    document.querySelector(".spotify").style.background =
-      "rgba(255, 255, 255, 0.3)";
+    document.querySelector(".qotd h2").style.color = "rgb(0, 0, 0)";
+    document.querySelector(".qotd p").style.color = "rgb(0, 0, 0)";
   } else if (description == "Rain") {
     conditionImage.src = "sources-media/images/rainy.gif";
     document.body.style.backgroundImage =
@@ -241,7 +256,6 @@ function showWeather(response) {
       "#song"
     ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/0GwcBK821xPuRklr4Hptdc?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
     changeTextColors("thunder");
-    document.querySelector("#condition").style.fontSize = "34px";
   } else if (description == "Snow") {
     conditionImage.src = "sources-media/images/snowy.gif";
     document.body.style.backgroundImage =
@@ -249,12 +263,7 @@ function showWeather(response) {
     document.querySelector(
       "#song"
     ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/11607FzqoipskTsXrwEHnJ?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
-    changeTextColors("default");
-    document.querySelector(".spotify p").style.color = "rgb(0, 0, 0)";
-    document.querySelector(".spotify").style.background =
-      "rgba(221, 221, 221, 0.4)";
-    document.querySelector("h1").style.color = "rgb(63, 63, 63)";
-    document.querySelector(".change-bg .title").style.color = "rgb(0, 0, 0)";
+    changeTextColors("snow");
   } else {
     conditionImage.src = "sources-media/images/foggy.gif";
     document.body.style.backgroundImage =
@@ -408,15 +417,15 @@ function changeBg(event) {
       ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/2kSb3wYSOV996xA2NSmpck?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
       changeTextColors("default");
       document.querySelector(".spotify p").style.color = "rgb(0, 0, 0)";
-      document.querySelector(".spotify").style.background =
-        "rgba(255, 255, 255, 0.3)";
+      document.querySelector(".qotd h2").style.color = "rgb(0, 0, 0)";
+      document.querySelector(".qotd p").style.color = "rgb(0, 0, 0)";
       break;
     case "rain":
       document.body.style.backgroundImage =
         "url('sources-media/images/rain-bg.jpg')";
       document.querySelector(
         "#song"
-      ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/0Ls4WLphg1obbq7wTPiy7k?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe> <iframe src="https://open.spotify.com/embed/track/3NwTDLpZRmyOTaOtGoVm8X?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
+      ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/0Ls4WLphg1obbq7wTPiy7k?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
       changeTextColors("rain");
       break;
     case "thunder":
@@ -433,12 +442,7 @@ function changeBg(event) {
       document.querySelector(
         "#song"
       ).innerHTML = `<iframe src="https://open.spotify.com/embed/track/11607FzqoipskTsXrwEHnJ?theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
-      changeTextColors("default");
-      document.querySelector(".spotify p").style.color = "rgb(0, 0, 0)";
-      document.querySelector(".spotify").style.background =
-        "rgba(221, 221, 221, 0.4)";
-      document.querySelector("h1").style.color = "rgb(63, 63, 63)";
-      document.querySelector(".change-bg .title").style.color = "rgb(0, 0, 0)";
+      changeTextColors("snow");
       break;
     case "mist":
       document.body.style.backgroundImage =
@@ -456,6 +460,95 @@ buttons.forEach(function (button) {
   button.addEventListener("click", changeBg);
 });
 
+function showQotd(event) {
+  event.preventDefault();
+  let birthDate = new Date(document.querySelector("#birth-date").value);
+  let birthDay = birthDate.getDate();
+  let birthMonth = birthDate.getMonth() + 1;
+  let sunSign = document.querySelector(".qotd h2");
+  let qotdContent = document.querySelector(".qotd p");
+  qotdContent.style.fontSize = "18px";
+  qotdContent.style.fontStyle = "italic";
+  if (
+    (birthMonth == "3" && birthDay >= 21 && birthDay <= 31) ||
+    (birthMonth == "4" && birthDay >= 1 && birthDay <= 19)
+  ) {
+    sunSign.innerHTML = "- Aries -";
+    qotdContent.innerHTML = " Being rebellious can help you get what you want.";
+  } else if (
+    (birthMonth == "4" && birthDay >= 21 && birthDay <= 31) ||
+    (birthMonth == "5" && birthDay >= 1 && birthDay <= 19)
+  ) {
+    sunSign.innerHTML = "- Taurus -";
+    qotdContent.innerHTML =
+      "Nurture yourself with talents and get in touch with your pleasure.";
+  } else if (
+    (birthMonth == "5" && birthDay >= 20 && birthDay <= 30) ||
+    (birthMonth == "6" && birthDay >= 1 && birthDay <= 20)
+  ) {
+    sunSign.innerHTML = "- Gemini -";
+    qotdContent.innerHTML =
+      "Let your sense of curiosity encourage you to learn.";
+  } else if (
+    (birthMonth == "6" && birthDay >= 21 && birthDay <= 30) ||
+    (birthMonth == "7" && birthDay >= 1 && birthDay <= 22)
+  ) {
+    sunSign.innerHTML = "- Cancer -";
+    qotdContent.innerHTML =
+      "Speak your mind and tell people who you really are.";
+  } else if (
+    (birthMonth == "7" && birthDay >= 23 && birthDay <= 31) ||
+    (birthMonth == "8" && birthDay >= 1 && birthDay <= 22)
+  ) {
+    sunSign.innerHTML = "- Leo -";
+    qotdContent.innerHTML = "Show the world just how brightly you shine.";
+  } else if (
+    (birthMonth == "8" && birthDay >= 23 && birthDay <= 31) ||
+    (birthMonth == "9" && birthDay >= 1 && birthDay <= 22)
+  ) {
+    sunSign.innerHTML = "- Virgo -";
+    qotdContent.innerHTML = "Find harmony in all your connections.";
+  } else if (
+    (birthMonth == "9" && birthDay >= 23 && birthDay <= 30) ||
+    (birthMonth == "10" && birthDay >= 1 && birthDay <= 22)
+  ) {
+    sunSign.innerHTML = "- Libra -";
+    qotdContent.innerHTML = "Learn to embrace the art of letting go.";
+  } else if (
+    (birthMonth == "10" && birthDay >= 23 && birthDay <= 31) ||
+    (birthMonth == "11" && birthDay >= 1 && birthDay <= 22)
+  ) {
+    sunSign.innerHTML = "- Scorpio -";
+    qotdContent.innerHTML = "Ask yourself what you want to be known for.";
+  } else if (
+    (birthMonth == "11" && birthDay >= 23 && birthDay <= 30) ||
+    (birthMonth == "12" && birthDay >= 1 && birthDay <= 21)
+  ) {
+    sunSign.innerHTML = "- Sagittarius -";
+    qotdContent.innerHTML = "Express yourself in bold and innovative ways.";
+  } else if (
+    (birthMonth == "12" && birthDay >= 22 && birthDay <= 31) ||
+    (birthMonth == "1" && birthDay >= 1 && birthDay <= 19)
+  ) {
+    sunSign.innerHTML = "- Capricorn -";
+    qotdContent.innerHTML = "Stay strong and don't bend to pressure.";
+  } else if (
+    (birthMonth == "1" && birthDay >= 20 && birthDay <= 31) ||
+    (birthMonth == "2" && birthDay >= 1 && birthDay <= 18)
+  ) {
+    sunSign.innerHTML = "- Aquarius -";
+    qotdContent.innerHTML =
+      "Be willing to compromise and extend the olive branch.";
+  } else if (
+    (birthMonth == "2" && birthDay >= 19 && birthDay <= 28) ||
+    (birthMonth == "3" && birthDay >= 1 && birthDay <= 20)
+  ) {
+    sunSign.innerHTML = "- Pisces -";
+    qotdContent.innerHTML =
+      "Trust your intuition as you go through big changes.";
+  }
+}
+
 showDate();
 showDefaultCity();
 let submitCity = document.querySelector("#search-form");
@@ -466,3 +559,5 @@ let fahrenheitButton = document.querySelector(".fahrenheit");
 fahrenheitButton.addEventListener("click", getFahrenheit);
 let celsiusButton = document.querySelector(".celsius");
 celsiusButton.addEventListener("click", getCelsius);
+let submitBirthday = document.querySelector("#qotd-form");
+submitBirthday.addEventListener("submit", showQotd);

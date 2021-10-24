@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Capriola&family=Raleway:wght@400;600&family=Lexend+Deca:wght@200;300;400;500&family=Alata&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Capriola&family=Raleway:wght@400;600&family=Lexend+Deca:wght@200;300;400;500;600&family=Alata&display=swap"
       rel="stylesheet"
     />
     <link
@@ -38,7 +38,7 @@
           <div class="row">
             <div class="col-6 main-info">
               <img
-                class="condition"
+                class="weather-icon"
                 src="sources-media/images/sunny.gif"
                 alt="sunny"
               />
@@ -80,7 +80,7 @@
             <div class="card spotify">
               <div class="card-body">
                 <p>
-                  Enjoy this beautiful weather with some good music! <br />
+                  Enjoy this beautiful weather with some good music 🎵 <br />
                   <span>(Don't forget to log in to play the full song)</span>
                 </p>
                 <div id="song"></div>
@@ -88,7 +88,19 @@
             </div>
           </div>
           <div class="col-6">
-            <div class="card qotd"><div class="card-body"></div></div>
+            <div class="card qotd">
+              <div class="card-body">
+                <h2></h2>
+                <p>
+                  Special quote of the day for you based on your sun sign!<br />Enter
+                  your birth date:
+                </p>
+                <form id="qotd-form">
+                <input id="birth-date" type="date" />
+                <input id="submit-bday" type="submit" value="Submit" />
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </section>

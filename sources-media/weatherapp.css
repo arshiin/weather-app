@@ -25,6 +25,8 @@ body {
   width: 18%;
   padding: 5px 2px;
   color: rgb(255, 255, 255);
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 300;
 }
 .search #submit-city {
   border: transparent;
@@ -33,7 +35,8 @@ body {
   width: 10%;
   padding: 5px 2px;
   color: rgb(255, 255, 255);
-  font-weight: bold;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
 }
 .today {
   background: rgba(255, 255, 255, 0.2);
@@ -41,6 +44,7 @@ body {
   backdrop-filter: blur(4px);
   border: transparent;
   border-radius: 30px;
+  margin-bottom: 25px;
 }
 .city-name {
   text-align: center;
@@ -113,7 +117,7 @@ body {
   list-style-type: none;
   padding: 0;
 }
-.other-info h1 {
+.other-info #condition {
   color: rgb(255, 255, 255);
   letter-spacing: -1px;
   font-size: 48px;
@@ -199,7 +203,7 @@ body {
 .weekdays {
   margin: 15px 0;
   padding: 5px 20px;
-  border: 4px solid rgba(161, 141, 207, 0.74);
+  border: 4px solid rgba(243, 169, 215, 0.74);
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(116, 117, 134, 0.37);
   backdrop-filter: blur(10px);
@@ -218,7 +222,7 @@ body {
 }
 .weekdays .weekday-temp {
   font-size: 24px;
-  color: rgb(22, 43, 110);
+  color: rgb(51, 34, 90);
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   text-align: right;
@@ -230,7 +234,8 @@ body {
 .spotify {
   border-radius: 30px;
   background-color: rgba(255, 255, 255, 0.2);
-  border: transparent
+  border: transparent;
+  border: 4px solid rgba(182, 133, 214, 0.774);
 }
 .spotify p {
   text-align: center;
@@ -244,6 +249,48 @@ body {
 }
 iframe {
   border-radius: 12px;
+}
+.qotd {
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: transparent;
+  border: 4px solid rgba(182, 133, 214, 0.774);
+  height: 231.2px;
+}
+.qotd h2 {
+  text-align: center;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+}
+.qotd p {
+  text-align: center;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+}
+.qotd #birth-date {
+  border-radius: 7px;
+  border: transparent;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  display: block;
+  margin: 0 auto;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 300;
+}
+.qotd #submit-bday {
+  border-radius: 7px;
+  border: transparent;
+  display: block;
+  margin: 10px auto;
+  margin-bottom: 0;
+  padding: 2px 15px 2px 15px;
+  background: url("images/glitter.gif");
+  color: rgb(66, 66, 66);
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
 }
 footer {
   text-align: center;
