@@ -48,6 +48,8 @@ function changeTextColors(weatherCondition) {
     case "default":
       document.querySelector(".main-info").style.color = "rgb(51, 34, 90)";
       document.querySelector("#condition").style.color = "rgb(255, 255, 255)";
+      document.querySelector("#condition").style.fontSize = "48px";
+      document.querySelector(".other-info").style.paddingLeft = "80px";
       document.querySelector(".date").style.color = "rgb(165, 133, 226)";
       document.querySelector(".time").style.color = "rgb(165, 80, 132)";
       document.querySelector(".feels").style.color = "rgb(78, 150, 124)";
@@ -67,6 +69,8 @@ function changeTextColors(weatherCondition) {
     case "night":
       document.querySelector(".main-info").style.color = "rgb(255, 255, 255)";
       document.querySelector("#condition").style.color = "rgb(255, 255, 255)";
+      document.querySelector("#condition").style.fontSize = "48px";
+      document.querySelector(".other-info").style.paddingLeft = "80px";
       document.querySelector(".date").style.color = "rgb(194, 176, 228)";
       document.querySelector(".time").style.color = "rgb(235, 184, 215)";
       document.querySelector(".humidity").style.color = "rgb(129, 203, 247)";
@@ -83,6 +87,8 @@ function changeTextColors(weatherCondition) {
     case "rain":
       document.querySelector(".main-info").style.color = "rgb(255, 255, 255)";
       document.querySelector("#condition").style.color = "rgb(255, 255, 255)";
+      document.querySelector("#condition").style.fontSize = "48px";
+      document.querySelector(".other-info").style.paddingLeft = "80px";
       document.querySelector(".time").style.color = "rgb(185, 105, 154)";
       document.querySelector(".feels").style.color = "rgb(174, 212, 85)";
       document.querySelector("#feels-temp").style.color = "rgb(174, 212, 85)";
@@ -100,6 +106,8 @@ function changeTextColors(weatherCondition) {
     case "thunder":
       document.querySelector(".main-info").style.color = "rgb(255, 255, 255)";
       document.querySelector("#condition").style.color = "rgb(255, 255, 255)";
+      document.querySelector("#condition").style.fontSize = "40px";
+      document.querySelector(".other-info").style.paddingLeft = "65px";
       document.querySelector(".date").style.color = "rgba(66, 24, 145, 0.767)";
       document.querySelector(".time").style.color = "rgb(123, 25, 85)";
       document.querySelector(".feels").style.color = "rgb(18, 75, 54)";
@@ -119,6 +127,8 @@ function changeTextColors(weatherCondition) {
     case "snow":
       document.querySelector(".main-info").style.color = "rgb(51, 34, 90)";
       document.querySelector("#condition").style.color = "rgb(255, 255, 255)";
+      document.querySelector("#condition").style.fontSize = "48px";
+      document.querySelector(".other-info").style.paddingLeft = "80px";
       document.querySelector(".date").style.color = "rgb(165, 133, 226)";
       document.querySelector(".time").style.color = "rgb(165, 80, 132)";
       document.querySelector(".feels").style.color = "rgb(78, 150, 124)";
